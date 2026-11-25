@@ -1,8 +1,8 @@
 const CATEGORIES = [
-  { name: 'Paseo', image: 'https://d22fxaf9t8d39k.cloudfront.net/c4be7ce1f449bcc653a351082e0c4f61da3a5a788ea11d12347cb136d42b2ff662110.jpg' },
-  { name: 'Descanso', image: 'https://d22fxaf9t8d39k.cloudfront.net/8f0031ee6352ae6194f25a47f062e6c6e23ae0fe32837414a5f4147b92fc41ff62110.jpg' },
-  { name: 'Identificación', image: 'https://d22fxaf9t8d39k.cloudfront.net/ce108a9b59cefbe9f1c46e695824e4a35457c44cd9b3c4c6960993a6a65f435962110.jpg' },
-  { name: 'Comederos', image: 'https://d22fxaf9t8d39k.cloudfront.net/ee28267db365b8dd276e5363f046a56399c0a240df3adec325f527acdeb9a61262110.jpg' },
+  { name: 'Paseo', slug: 'paseo', image: 'https://d22fxaf9t8d39k.cloudfront.net/c4be7ce1f449bcc653a351082e0c4f61da3a5a788ea11d12347cb136d42b2ff662110.jpg' },
+  { name: 'Descanso', slug: 'descanso', image: 'https://d22fxaf9t8d39k.cloudfront.net/8f0031ee6352ae6194f25a47f062e6c6e23ae0fe32837414a5f4147b92fc41ff62110.jpg' },
+  { name: 'Identificación', slug: 'identificacion', image: 'https://d22fxaf9t8d39k.cloudfront.net/ce108a9b59cefbe9f1c46e695824e4a35457c44cd9b3c4c6960993a6a65f435962110.jpg' },
+  { name: 'Comederos', slug: 'comedero', image: 'https://d22fxaf9t8d39k.cloudfront.net/ee28267db365b8dd276e5363f046a56399c0a240df3adec325f527acdeb9a61262110.jpg' },
 ];
 
 export default function Home() {
@@ -37,8 +37,8 @@ export default function Home() {
           <h2 className="mb-2 text-3xl font-extrabold">Nuestras categorías</h2>
           <p className="mb-10 text-stone-600">Todo lo que tu mascota necesita, con calidad y diseño.</p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {CATEGORIES.map(({ name, image }) => (
-              <a key={name} href={`https://www.somosorejas.com.ar/${name.toLowerCase()}`} className="group overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 transition hover:shadow-lg">
+            {CATEGORIES.map(({ name, slug, image }) => (
+              <a key={name} href={`https://www.somosorejas.com.ar/${slug}`} className="group overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 transition hover:shadow-lg">
                 <img src={image} alt={name} className="h-52 w-full bg-white object-cover transition group-hover:scale-105" />
                 <div className="flex items-center justify-between p-4 font-bold">
                   {name}
